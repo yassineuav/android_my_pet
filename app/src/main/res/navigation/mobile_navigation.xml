@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="tech.siham.papp.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_interested_in" />
+
+    <fragment
+        android:id="@+id/nav_my_post"
+        android:name="tech.siham.papp.ui.mypost.MyPostFragment"
+        android:label="@string/menu_my_post"
+        tools:layout="@layout/fragment_my_post" />
+
+    <fragment
+        android:id="@+id/nav_post"
+        android:name="tech.siham.papp.ui.post.PostFragment"
+        android:label="@string/menu_post"
+        tools:layout="@layout/fragment_post" />
+
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="tech.siham.papp.ui.login.LoginFragment"
+        tools:layout="@layout/fragment_login" />
+
+    <fragment
+        android:id="@+id/nav_register"
+        android:name="tech.siham.papp.ui.register.RegisterFragment"
+        tools:layout="@layout/fragment_register" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="tech.siham.papp.ui.profile.ProfileFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_profile" />
+
+
+</navigation>

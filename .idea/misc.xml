@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Admin/Desktop/My Projects/PAPP/app/app/src/main/res/drawable/ic_baseline_apps_24.xml" value="0.3828125" />
+        <entry key="..\:/Users/Admin/Desktop/My Projects/PAPP/app/app/src/main/res/layout/activity_splash_screen.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/Desktop/My Projects/PAPP/app/app/src/main/res/layout/add_post_dialog_layout.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/Admin/Desktop/My Projects/PAPP/app/app/src/main/res/layout/app_bar_main.xml" value="0.21197916666666666" />
+        <entry key="..\:/Users/Admin/Desktop/My Projects/PAPP/app/app/src/main/res/layout/content_main.xml" value="0.21197916666666666" />
+        <entry key="..\:/Users/Admin/Desktop/My Projects/PAPP/app/app/src/main/res/layout/fragment_interested_in.xml" value="0.21197916666666666" />
+        <entry key="..\:/Users/Admin/Desktop/My Projects/PAPP/app/app/src/main/res/layout/fragment_login.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/Admin/Desktop/My Projects/PAPP/app/app/src/main/res/layout/fragment_my_post.xml" value="0.21197916666666666" />
+        <entry key="..\:/Users/Admin/Desktop/My Projects/PAPP/app/app/src/main/res/layout/fragment_post.xml" value="0.4050632911392405" />
+        <entry key="..\:/Users/Admin/Desktop/My Projects/PAPP/app/app/src/main/res/layout/fragment_profile.xml" value="0.21197916666666666" />
+        <entry key="..\:/Users/Admin/Desktop/My Projects/PAPP/app/app/src/main/res/layout/interested_in_items.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/Desktop/My Projects/PAPP/app/app/src/main/res/layout/list_posts_items.xml" value="0.5" />
+        <entry key="..\:/Users/Admin/Desktop/My Projects/PAPP/app/app/src/main/res/layout/post_item_test.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/Desktop/My Projects/PAPP/app/app/src/main/res/layout/post_items.xml" value="0.20572916666666666" />
+        <entry key="..\:/Users/Admin/Desktop/My Projects/PAPP/app/app/src/main/res/menu/activity_main_drawer.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/Desktop/PAPP/app/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/Desktop/PAPP/app/app/src/main/res/layout/activity_splash_screen.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Admin/Desktop/PAPP/app/app/src/main/res/layout/add_post_dialog_layout.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Admin/Desktop/PAPP/app/app/src/main/res/layout/app_bar_main.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Admin/Desktop/PAPP/app/app/src/main/res/layout/content_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/Desktop/PAPP/app/app/src/main/res/layout/delete_post_dialog_layout.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Admin/Desktop/PAPP/app/app/src/main/res/layout/fragment_interested_in.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/Desktop/PAPP/app/app/src/main/res/layout/fragment_login.xml" value="0.33" />
+        <entry key="..\:/Users/Admin/Desktop/PAPP/app/app/src/main/res/layout/fragment_post.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/Desktop/PAPP/app/app/src/main/res/layout/fragment_profile.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/Desktop/PAPP/app/app/src/main/res/layout/fragment_register.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Admin/Desktop/PAPP/app/app/src/main/res/layout/fragment_slideshow.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Admin/Desktop/PAPP/app/app/src/main/res/layout/interested_in_items.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Admin/Desktop/PAPP/app/app/src/main/res/layout/nav_header_main.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Admin/Desktop/PAPP/app/app/src/main/res/layout/post_items.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Admin/Desktop/PAPP/app/app/src/main/res/menu/activity_main_drawer.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/Desktop/PAPP/app/app/src/main/res/menu/main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/Desktop/PAPP/app/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/Admin/Desktop/PAPP/app/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.22135416666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

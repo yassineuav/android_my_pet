@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="interestedIn"
+            type="tech.siham.papp.models.InterestedIn" />
+    </data>
+
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="110dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="5dp"
+        app:cardCornerRadius="5dp"
+        app:cardMaxElevation="5dp"
+        android:shadowColor="@color/cardview_dark_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                app:imageUrl="@{interestedIn.imageUrl}" />
+
+            <LinearLayout
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@+id/image_icon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:padding="5dp"
+                    android:id="@+id/text_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{interestedIn.title}"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{interestedIn.description}"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:padding="5dp"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@+id/image_icon"
+                android:text="@{`popular: `+interestedIn.popular +`\t\t`+ `suggested: `+interestedIn.suggestedTimes}"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/image_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:padding="5dp"
+                android:scaleType="centerCrop"
+                app:imageUrl="@{interestedIn.iconUrl}" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</layout>

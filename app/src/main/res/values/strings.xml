@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">PAPP</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="password">Your Password</string>
+    <string name="username">Your Username</string>
+    <string name="ai_suggest">AI Suggest</string>
+    <string name="text_view">We Make Your Life Better By helping you solve your problems and confusing things in life</string>
+    <string name="menu_login">Login</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_register">Register</string>
+    <string name="email">email</string>
+    <string name="add_post">add_post</string>
+    <string name="menu_my_post">My Post</string>
+    <string name="menu_post">Posts</string>
+
+    <string name="show_dialog">Show dialog</string>
+    <string name="show_custom_dialog">Show custom dialog</string>
+    <string name="ok">OK</string>
+    <string name="greetings_sent_successfully">Greetings sent successfully</string>
+    <string name="delete_all">delete all</string>
+</resources>
