@@ -52,17 +52,17 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:text="@{myPost.title}"
+                        android:text="@{myPost.description}"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="@{myPost.description}"
-                        android:textColor="@color/gray"
-                        android:textSize="12sp" />
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:padding="5dp"-->
+<!--                        android:text="@{myPost.description}"-->
+<!--                        android:textColor="@color/gray"-->
+<!--                        android:textSize="12sp" />-->
 
                     <TextView
                         android:layout_width="match_parent"
@@ -74,7 +74,6 @@
                 </LinearLayout>
                 <LinearLayout
                     android:id="@+id/control_buttons"
-
                     android:layout_alignParentEnd="true"
                     android:orientation="vertical"
                     android:layout_width="wrap_content"
@@ -85,9 +84,11 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:src="@drawable/ic_edit"
-                        android:id="@+id/button_edit" />
+                        android:id="@+id/button_edit"
+                        android:contentDescription="@string/edit" />
 
                     <ImageView
+                        android:contentDescription="@string/delete"
                         android:layout_margin="5dp"
                         android:layout_width="30dp"
                         android:layout_height="30dp"

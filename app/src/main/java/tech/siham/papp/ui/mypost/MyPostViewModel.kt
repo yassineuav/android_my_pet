@@ -15,6 +15,7 @@ import okhttp3.MultipartBody
 import java.io.File
 import okhttp3.RequestBody.Companion.asRequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
+import retrofit2.HttpException
 import tech.siham.papp.data.network.ServiceAPI
 import tech.siham.papp.data.requests.PostRequest
 import tech.siham.papp.models.MyPost
@@ -89,27 +90,28 @@ class MyPostViewModel : ViewModel() {
             val requestBody = file.asRequestBody("image/*".toMediaTypeOrNull())
             val filePart = MultipartBody.Part.createFormData("imageUrl", file.name, requestBody);
 
-//            val title = postRequest.title.toRequestBody("text/plain".toMediaTypeOrNull())
-//            val userId = postRequest.userId.toRequestBody("text/plain".toMediaTypeOrNull())
-//            val desc = postRequest.description.toRequestBody("text/plain".toMediaTypeOrNull())
-//            val content = postRequest.content.toRequestBody("text/plain".toMediaTypeOrNull())
+            //val userId = postRequest.userId.toString().toRequestBody("text/plain".toMediaTypeOrNull())
+            val userId = postRequest.userId
+            val title = postRequest.title.toRequestBody("text/plain".toMediaTypeOrNull())
+            val desc = postRequest.description.toRequestBody("text/plain".toMediaTypeOrNull())
+            val content = postRequest.content.toRequestBody("text/plain".toMediaTypeOrNull())
 
 
             val setPostDeferred = ServiceAPI.retrofitService.setPost(
                 filePart,
-                postRequest.userId,
-                postRequest.title,
-                postRequest.description,
-                postRequest.content)
+                userId,
+                title,
+                desc,
+                content)
 
             try{
                 _status.value = LoadingMyPostStatus.LOADING
                 val listResult = setPostDeferred.await()
                 _myPost.value = listResult
                 // getMyPosts()
-                Log.e("upload data:success:", "data upload success")
+                Log.e("upload data success:", "data upload success")
             }catch (t:Throwable){
-                Log.e("upload data:Fail:", t.message.toString() )
+                Log.e("upload data Fail:", t.message.toString() )
                 _status.value = LoadingMyPostStatus.ERROR
             }finally {
                 _status.value = LoadingMyPostStatus.DONE
@@ -157,10 +159,13 @@ class MyPostViewModel : ViewModel() {
                 }
                 Log.i("onDelete: ", listResult)
 
-            }catch (t:Throwable){
-                Log.i("fetch data:  Fail : ", t.message.toString())
+            }catch (e:HttpException){
+                if(e.code() == 204){
+                   Log.e("delete post id: ${id}", e.message())
+                }
+                Log.i("delete post Fail", e.toString())
                 _status.value = LoadingMyPostStatus.ERROR
-                _details.value = t.message.toString()
+                _details.value = e.message.toString()
             }finally {
                 getMyPosts()
                 isLoading.set(false)

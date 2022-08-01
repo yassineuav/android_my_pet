@@ -28,4 +28,6 @@
     <string name="ok">OK</string>
     <string name="greetings_sent_successfully">Greetings sent successfully</string>
     <string name="delete_all">delete all</string>
+    <string name="delete" >Delete</string>
+    <string name="edit">edit</string>
 </resources>

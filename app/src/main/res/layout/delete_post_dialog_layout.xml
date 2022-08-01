@@ -57,7 +57,7 @@
             android:layout_marginBottom="16dp"
             android:background="@drawable/round_corners"
             android:backgroundTint="#FF0057"
-            android:text="@string/delete_all"
+            android:text="@string/delete"
             android:textColor="@color/white"
             android:textStyle="bold"
             app:cornerRadius="20dp"

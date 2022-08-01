@@ -76,9 +76,9 @@ interface ApiService {
     @POST(MY_POST_URL)
     fun setPost(@Part() image: MultipartBody.Part,
                 @Part("user_id") userId:Int,
-                @Part("title") title:String,
-                @Part("description") description:String,
-                @Part("content") content:String
+                @Part("title") title:RequestBody,
+                @Part("description") description:RequestBody,
+                @Part("content") content:RequestBody
     ): Deferred<PostRequest>
 
     // @Part MultipartBody.Part image, @Part("name") RequestBody name

@@ -24,8 +24,10 @@ import android.os.Build
 import android.util.Log
 import android.widget.EditText
 import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
 import tech.siham.papp.R
 import tech.siham.papp.adapter.MyPostListAdapter
+import tech.siham.papp.adapter.PostListAdapter
 import tech.siham.papp.databinding.AddPostDialogLayoutBinding
 import tech.siham.papp.databinding.DeletePostDialogLayoutBinding
 
@@ -72,7 +74,9 @@ class MyPostFragment : Fragment() {
             MyPostListAdapter.OnClickListener{
                 showDeleteDialog(it)
             },
-            // PostListAdapter.OnClickListener{ showEditDialog() }
+             MyPostListAdapter.OnClickListener{
+                 showEditDialog()
+             }
         )
 
         // binding.post.adapter?.notifyDataSetChanged()
@@ -161,23 +165,19 @@ class MyPostFragment : Fragment() {
 
                     val userId :Int = SessionManager().getUserId()
 
-                    Log.e("SHOW USER ID", "user id use :$userId")
+                    myPostViewModel.setPost(
+                        file,
+                        PostRequest(
+                            "post uploaded by android user id :$userId",
+                            userId,
+                            desc,
+                            "image")
+                    )
 
-//                    myPostViewModel.setPost(
-//                        file,
-//                        PostRequest(
-//                            "post uploaded by android user id :$userId",
-//                            userId,
-//                            desc,
-//                            "image")
-//                    )
-
-//                    customDialog.dismiss()
+                    customDialog.dismiss()
                 }
             }
         }
-
-
 
     }
 
@@ -215,7 +215,6 @@ class MyPostFragment : Fragment() {
     private fun showDeleteDialog(post: MyPost) {
         // val id = post.url.split("/").takeLast(2).first()
         val id:Int? = post.id
-
         val dialog = Dialog(requireContext())
         val dialogBinding = DeletePostDialogLayoutBinding.inflate(LayoutInflater.from(context));
         dialog.setContentView(dialogBinding.root)
@@ -226,6 +225,7 @@ class MyPostFragment : Fragment() {
         dialogBinding.buttonDelete.setOnClickListener {
 //            Snackbar.make(view, "Open Delete Dialog", Snackbar.LENGTH_LONG)
 //                .setAction("Action", null).show()
+
                myPostViewModel.deletePost(id)
 
             dialog.dismiss()

@@ -15,6 +15,6 @@ object Constants {
 
     const val MY_POST_URL = "mypost/"
 
-    const val DELETE_POST_URL = "posts/{id}/"
+    const val DELETE_POST_URL = "mypost/{id}/"
 
 }
