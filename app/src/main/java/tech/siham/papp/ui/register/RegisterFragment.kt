@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import tech.siham.papp.R
 import tech.siham.papp.data.requests.RegisterRequest
 import tech.siham.papp.databinding.FragmentRegisterBinding
 import tech.siham.papp.utils.SessionManager
@@ -42,9 +43,9 @@ class RegisterFragment : Fragment() {
 
         val messageView: TextView = binding.textMessage
 
-        val username: EditText = binding.username
-        val password: EditText = binding.password
-        val email: EditText = binding.email
+        val username = binding.username.toString().trim()
+        val password = binding.password.toString().trim()
+        val email = binding.email.toString().trim()
 
 //        loginViewModel.details.observe(viewLifecycleOwner, Observer {
 //            messageView.text = it.toString()
@@ -55,8 +56,29 @@ class RegisterFragment : Fragment() {
         })
 
         binding.buttonRegister.setOnClickListener {
-            SessionManager().logoutAuthToken()
-            registerViewModel.setRegister(RegisterRequest(username.text.toString(), email.text.toString(), password.text.toString()))
+
+            when{
+                username.isEmpty() -> {
+                    messageView.text = "please enter username"
+                }
+                email.isEmpty() -> {
+                    messageView.text = "please enter email"
+                }
+                password.isEmpty() -> {
+                    messageView.text = "please enter password"
+                }
+                else -> {
+                    SessionManager().logoutAuthToken()
+                    registerViewModel.setRegister(
+                        RegisterRequest(
+                            username,
+                            email,
+                            password
+                        )
+                    )
+                }
+            }
+
         }
 
         return root

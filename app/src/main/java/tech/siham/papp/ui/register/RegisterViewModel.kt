@@ -41,13 +41,11 @@ class RegisterViewModel : ViewModel() {
             try{
                 _status.value = loadingStatus.LOADING
                 val result = getLoginDeferred.await()
-                if(result != null){
-                    _details.value = result
-                }
+                _details.value = result
                 _status.value = loadingStatus.DONE
 
             }catch (t:Throwable){
-                Log.i("fetch data:  Fail : ", t.message.toString())
+                Log.e("Register failed ", t.message.toString())
                 _status.value = loadingStatus.ERROR
                 _details.value = RegisterRequest("error:"+ t.message.toString(),"","")
             }finally {

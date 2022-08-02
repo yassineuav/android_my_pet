@@ -108,7 +108,6 @@ class MyPostViewModel : ViewModel() {
                 _status.value = LoadingMyPostStatus.LOADING
                 val listResult = setPostDeferred.await()
                 _myPost.value = listResult
-                // getMyPosts()
                 Log.e("upload data success:", "data upload success")
             }catch (t:Throwable){
                 Log.e("upload data Fail:", t.message.toString() )
@@ -116,6 +115,7 @@ class MyPostViewModel : ViewModel() {
             }finally {
                 _status.value = LoadingMyPostStatus.DONE
                 isLoading.set(false)
+                getMyPosts()
             }
 
         }

@@ -30,4 +30,5 @@
     <string name="delete_all">delete all</string>
     <string name="delete" >Delete</string>
     <string name="edit">edit</string>
+    <string name="delete_msg">Are you sure?\nDo you want DELETE this POST</string>
 </resources>

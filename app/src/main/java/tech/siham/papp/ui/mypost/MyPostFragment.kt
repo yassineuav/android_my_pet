@@ -100,7 +100,8 @@ class MyPostFragment : Fragment() {
         return binding.root
     }
 
-    private fun showAddDialog() {
+    private fun showAddDialog(post: MyPost?=null) {
+
         val dialogBinding: AddPostDialogLayoutBinding? =
             DataBindingUtil.inflate(
                 LayoutInflater.from(requireContext()),
@@ -136,6 +137,7 @@ class MyPostFragment : Fragment() {
             startActivityForResult(pickIntent, IMAGE_PICK_CODE)
             }
         }
+
 
         dialogBinding?.buttonAddPost?.setOnClickListener {
 
@@ -207,6 +209,7 @@ class MyPostFragment : Fragment() {
 
         dialogBinding?.buttonAddPost?.setOnClickListener {
             //postViewModel.setPost(Post("","test Post", "this is test desc","text/content","post/images/life.jpg"))
+
             customDialog.dismiss()
         }
     }
@@ -219,8 +222,8 @@ class MyPostFragment : Fragment() {
         val dialogBinding = DeletePostDialogLayoutBinding.inflate(LayoutInflater.from(context));
         dialog.setContentView(dialogBinding.root)
 
-        dialogBinding.title.text = "Delete: "+post.title+"\t\t id:"+ id
-        dialogBinding.desc.text = "desc: "+ post.description +"\n"+"content: "+ post.content +"\n"+ id
+        dialogBinding.title.text = getString(R.string.delete_msg)
+//        dialogBinding.desc.text = "desc: "+ post.description +"\n"+"content: "+ post.content +"\n"+ id
 
         dialogBinding.buttonDelete.setOnClickListener {
 //            Snackbar.make(view, "Open Delete Dialog", Snackbar.LENGTH_LONG)
