@@ -1,30 +1,26 @@
-package tech.siham.papp.ui.register
+package tech.siham.papp.ui.auth.register
 
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.TextView
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import tech.siham.papp.MainActivity
 import tech.siham.papp.data.requests.RegisterRequest
-import tech.siham.papp.databinding.FragmentRegisterBinding
-import tech.siham.papp.ui.auth.register.RegisterViewModel
+import tech.siham.papp.databinding.ActivityRegisterBinding
 import tech.siham.papp.utils.SessionManager
 
-class RegisterFragment : Fragment() {
+class RegisterActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityRegisterBinding
     private lateinit var registerViewModel: RegisterViewModel
-    private var _binding: FragmentRegisterBinding? = null
 
-    private val binding get() = _binding!!
+    override fun onCreate(savedInstanceState: Bundle?) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        super.onCreate(savedInstanceState)
+        binding = ActivityRegisterBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         registerViewModel =
             ViewModelProvider(
@@ -32,25 +28,27 @@ class RegisterFragment : Fragment() {
                 ViewModelProvider.NewInstanceFactory()
             ).get(RegisterViewModel::class.java)
 
-        _binding = FragmentRegisterBinding.inflate(inflater, container, false)
-
-        val root: View = binding.root
 
         binding.lifecycleOwner = this
 
-        // binding.data = registerViewModel
+//      binding.data = registerViewModel
 
         val messageView: TextView = binding.textMessage
 
-        val username = binding.username.text.toString().trim()
-        val password = binding.password.text.toString().trim()
-        val email = binding.email.text.toString().trim()
 
-        registerViewModel.details.observe(viewLifecycleOwner, Observer {
-            messageView.text = it.toString()
-        })
+//        registerViewModel.details.observe(this, Observer {
+//            messageView.text = it.toString()
+//        })
+
+        binding.goLoginActivity.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
 
         binding.buttonRegister.setOnClickListener {
+            val username = binding.username.text.toString().trim()
+            val email = binding.email.text.toString().trim()
+            val password = binding.password.text.toString().trim()
 
             when{
                 username.isEmpty() -> {
@@ -66,7 +64,7 @@ class RegisterFragment : Fragment() {
                     SessionManager().logoutAuthToken()
                     SessionManager().clearUserId()
 
-                    registerViewModel.setRegister(
+                    registerViewModel.setRegisterCall(
                         RegisterRequest(
                             username,
                             email,
@@ -78,11 +76,8 @@ class RegisterFragment : Fragment() {
 
         }
 
-        return root
+
+
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }

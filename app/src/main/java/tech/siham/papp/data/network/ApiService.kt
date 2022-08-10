@@ -7,6 +7,7 @@ import kotlinx.coroutines.Deferred
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
 import okhttp3.RequestBody
+import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.*
@@ -49,8 +50,10 @@ interface ApiService {
 
     // @FormUrlEncoded
     @POST(REGISTER_URL)
-    @Headers("Accept:application/json", "Content-Type: application/json")
-    fun Register(@Body request: RegisterRequest): Deferred<RegisterRequest>
+    fun Register(@Body request: RegisterRequest): Deferred<String>
+
+    @POST(REGISTER_URL)
+    fun getRegister(@Body request: RegisterRequest): Call<String>
 
     @GET(PROFILE_URL)
     fun getUser(): Deferred<User>

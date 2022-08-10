@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
+import tech.siham.papp.ui.auth.register.RegisterActivity
+import tech.siham.papp.utils.SessionManager
+
 
 @Suppress("DEPRECATION")
 class SplashScreen : AppCompatActivity() {
@@ -23,8 +26,11 @@ class SplashScreen : AppCompatActivity() {
         // to send a message with a delayed time.
         Handler().postDelayed({
             val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            val intentRegister = Intent(this, RegisterActivity::class.java)
+
+            startActivity(if(SessionManager().fetchAuthToken() == null) intentRegister else intent )
+
             finish()
-        }, 3000) // 3000 is the delayed time in milliseconds.
+        }, 2000) // 2000 is the delayed time in milliseconds.
     }
 }

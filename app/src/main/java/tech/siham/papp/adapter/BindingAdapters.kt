@@ -11,6 +11,7 @@ import tech.siham.papp.R
 import tech.siham.papp.models.InterestedIn
 import tech.siham.papp.models.MyPost
 import tech.siham.papp.models.Post
+import tech.siham.papp.ui.auth.register.RegisterStatus
 import tech.siham.papp.ui.home.interestedApiStatus
 import tech.siham.papp.ui.login.loginStatus
 import tech.siham.papp.ui.mypost.LoadingMyPostStatus
@@ -63,6 +64,7 @@ fun bindStatus(statusImageView: ImageView, status: interestedApiStatus?){
         interestedApiStatus.DONE -> {
             statusImageView.visibility = View.GONE
         }
+        else -> {}
     }
 }
 
@@ -125,5 +127,24 @@ fun bindStatus(statusImageView: ImageView, status: loginStatus?){
         loginStatus.DONE -> {
             statusImageView.visibility = View.GONE
         }
+        else -> {}
+    }
+}
+
+@BindingAdapter("RegisterStatus")
+fun bindStatus(statusImageView: ImageView, status: RegisterStatus?){
+    when(status){
+        RegisterStatus.LOADING -> {
+            statusImageView.visibility = View.VISIBLE
+            statusImageView.setImageResource(R.drawable.loading_animation)
+        }
+        RegisterStatus.ERROR -> {
+            statusImageView.visibility = View.VISIBLE
+            statusImageView.setImageResource(R.drawable.ic_connection_error)
+        }
+        RegisterStatus.DONE -> {
+            statusImageView.visibility = View.GONE
+        }
+        else -> {}
     }
 }

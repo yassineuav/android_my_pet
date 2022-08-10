@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PAPP</string>
+    <string name="app_name">Papp</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -11,9 +11,8 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="password">Your Password</string>
-    <string name="username">Your Username</string>
-    <string name="ai_suggest">AI Suggest</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
     <string name="text_view">We Make Your Life Better By helping you solve your problems and confusing things in life</string>
     <string name="menu_login">Login</string>
     <string name="menu_profile">Profile</string>
@@ -28,7 +27,11 @@
     <string name="ok">OK</string>
     <string name="greetings_sent_successfully">Greetings sent successfully</string>
     <string name="delete_all">delete all</string>
-    <string name="delete" >Delete</string>
+    <string name="delete">Delete</string>
     <string name="edit">edit</string>
     <string name="delete_msg">Are you sure?\nDo you want DELETE this POST</string>
+    <string name="desc">Pet Lover</string>
+    <string name="register_intro">Welcome To Papp</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_an_account">Already Have an Account?</string>
 </resources>
