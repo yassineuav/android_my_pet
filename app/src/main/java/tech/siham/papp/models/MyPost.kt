@@ -1,6 +1,5 @@
 package tech.siham.papp.models
 
-
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 

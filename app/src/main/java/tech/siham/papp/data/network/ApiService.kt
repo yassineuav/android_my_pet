@@ -50,7 +50,7 @@ interface ApiService {
 
     // @FormUrlEncoded
     @POST(REGISTER_URL)
-    fun Register(@Body request: RegisterRequest): Deferred<String>
+    fun Register(@Body request: RegisterRequest): Deferred<RegisterRequest>
 
     @POST(REGISTER_URL)
     fun getRegister(@Body request: RegisterRequest): Call<String>

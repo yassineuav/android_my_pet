@@ -1,4 +1,4 @@
-package tech.siham.papp.ui.auth.register
+package tech.siham.papp.ui.auth
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import tech.siham.papp.MainActivity
 import tech.siham.papp.data.requests.RegisterRequest
 import tech.siham.papp.databinding.ActivityRegisterBinding
 import tech.siham.papp.utils.SessionManager
@@ -14,7 +13,7 @@ import tech.siham.papp.utils.SessionManager
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
-    private lateinit var registerViewModel: RegisterViewModel
+    private lateinit var registerViewModel: LoginRegisterViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -26,19 +25,19 @@ class RegisterActivity : AppCompatActivity() {
             ViewModelProvider(
                 this,
                 ViewModelProvider.NewInstanceFactory()
-            ).get(RegisterViewModel::class.java)
+            ).get(LoginRegisterViewModel::class.java)
 
 
         binding.lifecycleOwner = this
 
-//      binding.data = registerViewModel
+        binding.data = registerViewModel
 
         val messageView: TextView = binding.textMessage
 
 
-//        registerViewModel.details.observe(this, Observer {
-//            messageView.text = it.toString()
-//        })
+        registerViewModel.registerErrorDetails.observe(this, Observer {
+            messageView.text = it.toString()
+        })
 
         binding.goLoginActivity.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
@@ -52,32 +51,30 @@ class RegisterActivity : AppCompatActivity() {
 
             when{
                 username.isEmpty() -> {
-                    messageView.text = "please enter username"
+                    messageView.text = "* please enter username"
                 }
                 email.isEmpty() -> {
-                    messageView.text = "please enter email"
+                    messageView.text = "* please enter email"
                 }
                 password.isEmpty() -> {
-                    messageView.text = "please enter password"
+                    messageView.text = "* please enter password"
                 }
+
                 else -> {
                     SessionManager().logoutAuthToken()
                     SessionManager().clearUserId()
 
-                    registerViewModel.setRegisterCall(
+                    registerViewModel.setRegister(
                         RegisterRequest(
                             username,
                             email,
                             password
                         )
                     )
+
                 }
             }
-
         }
-
-
-
     }
 
 }

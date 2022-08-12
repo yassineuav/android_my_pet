@@ -1,4 +1,4 @@
-package tech.siham.papp.ui.auth.register
+package tech.siham.papp.ui.auth
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

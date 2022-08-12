@@ -36,7 +36,7 @@
             android:exported="true"
             android:theme="@style/Theme.papp.NoActionBar" />
         <activity
-            android:name=".ui.auth.register.RegisterActivity"
+            android:name=".ui.auth.RegisterActivity"
             android:exported="false"
             android:theme="@style/Theme.papp.NoActionBar" />
     </application>

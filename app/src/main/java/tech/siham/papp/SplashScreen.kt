@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
-import tech.siham.papp.ui.auth.register.RegisterActivity
+import tech.siham.papp.ui.auth.RegisterActivity
 import tech.siham.papp.utils.SessionManager
 
 

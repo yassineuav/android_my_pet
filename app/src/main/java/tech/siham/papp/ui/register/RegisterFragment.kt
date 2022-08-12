@@ -10,12 +10,12 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import tech.siham.papp.data.requests.RegisterRequest
 import tech.siham.papp.databinding.FragmentRegisterBinding
-import tech.siham.papp.ui.auth.register.RegisterViewModel
+import tech.siham.papp.ui.auth.LoginRegisterViewModel
 import tech.siham.papp.utils.SessionManager
 
 class RegisterFragment : Fragment() {
 
-    private lateinit var registerViewModel: RegisterViewModel
+    private lateinit var registerViewModel: LoginRegisterViewModel
     private var _binding: FragmentRegisterBinding? = null
 
     private val binding get() = _binding!!
@@ -30,7 +30,7 @@ class RegisterFragment : Fragment() {
             ViewModelProvider(
                 this,
                 ViewModelProvider.NewInstanceFactory()
-            ).get(RegisterViewModel::class.java)
+            ).get(LoginRegisterViewModel::class.java)
 
         _binding = FragmentRegisterBinding.inflate(inflater, container, false)
 
@@ -46,7 +46,7 @@ class RegisterFragment : Fragment() {
         val password = binding.password.text.toString().trim()
         val email = binding.email.text.toString().trim()
 
-        registerViewModel.details.observe(viewLifecycleOwner, Observer {
+        registerViewModel.registerDetails.observe(viewLifecycleOwner, Observer {
             messageView.text = it.toString()
         })
 

@@ -11,7 +11,7 @@ import tech.siham.papp.R
 import tech.siham.papp.models.InterestedIn
 import tech.siham.papp.models.MyPost
 import tech.siham.papp.models.Post
-import tech.siham.papp.ui.auth.register.RegisterStatus
+import tech.siham.papp.ui.auth.RegisterStatus
 import tech.siham.papp.ui.home.interestedApiStatus
 import tech.siham.papp.ui.login.loginStatus
 import tech.siham.papp.ui.mypost.LoadingMyPostStatus
