@@ -31,7 +31,11 @@
     <string name="edit">edit</string>
     <string name="delete_msg">Are you sure?\nDo you want DELETE this POST</string>
     <string name="desc">Pet Lover</string>
-    <string name="register_intro">Welcome To Papp</string>
+    <string name="register_intro">Welcome To PAPP</string>
     <string name="sign_up">Sign Up</string>
     <string name="already_have_an_account">Already Have an Account?</string>
+    <string name="welcome_back">Hey there!\nWelcome Back</string>
+    <string name="login">Login</string>
+    <string name="dont_have_account">Don\'t have an account?</string>
+    <string name="forgot_password">Forgot password?</string>
 </resources>

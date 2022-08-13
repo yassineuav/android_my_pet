@@ -19,9 +19,6 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
-        <activity
             android:name=".SplashScreen"
             android:exported="true"
             android:theme="@style/Theme.papp.NoActionBar">
@@ -39,6 +36,11 @@
             android:name=".ui.auth.RegisterActivity"
             android:exported="false"
             android:theme="@style/Theme.papp.NoActionBar" />
+        <activity
+            android:name=".ui.auth.LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.papp.NoActionBar" />
+
     </application>
 
 </manifest>

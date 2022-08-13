@@ -7,10 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="gray">#232020</color>
+    <color name="gray">#787777</color>
     <color name="pink">#FF0057</color>
     <!--  my colors UI-->
     <color name="blue_button">#2196F3</color>
+    <color name="orange_button">#f08417</color>
 
     <color name="light_blue">#975191CA</color>
     <color name="red">#DD1D2D</color>

@@ -15,26 +15,38 @@
         tools:context=".ui.auth.RegisterActivity">
 
         <TextView
-            android:layout_marginTop="50dp"
-            android:id="@+id/app_name"
+            android:layout_marginTop="5dp"
+            android:id="@+id/app_title"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:text="@string/register_intro"
-            android:textColor="@color/black"
-            android:textSize="28sp"
+            android:text="@string/menu_register"
+            android:textColor="@color/gray"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:layout_marginStart="10dp"
+            android:id="@+id/app_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/register_intro"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/app_title" />
+
 
         <LinearLayout
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginTop="80dp"
             android:id="@+id/register_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -42,27 +54,29 @@
 
 
             <TextView
-                android:textColor="@color/red"
                 android:id="@+id/text_message"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:textColor="@color/red" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/edit_text_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp">
+                android:layout_marginBottom="16dp"
+                app:hintTextColor="@color/blue_button"
+                >
 
                 <EditText
                     android:id="@+id/username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:autofillHints=""
                     android:ems="10"
                     android:hint="@string/username"
-                    android:inputType="text"
-                    android:autofillHints="" />
+                    android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -70,6 +84,7 @@
                 android:id="@+id/edit_text_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:hintTextColor="@color/blue_button"
                 android:layout_marginBottom="16dp">
 
                 <EditText
@@ -91,7 +106,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/gray">
+                app:hintTextColor="@color/blue_button"
+                app:passwordToggleTint="@color/blue_button">
 
                 <EditText
                     android:id="@+id/password"
@@ -104,46 +120,45 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:textSize="22sp"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:background="@drawable/round_button_blue"
-                android:layout_marginTop="20dp"
                 android:id="@+id/button_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
-                android:text="@string/sign_up" />
-
+                android:background="@drawable/round_button_blue"
+                android:text="@string/sign_up"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="22sp" />
 
             <LinearLayout
                 android:id="@+id/go_login_activity"
-                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:orientation="horizontal">
+
                 <TextView
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:text="@string/already_have_an_account"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:textColor="@color/blue_button"
-                    android:textSize="22sp"
-                    android:layout_marginStart="10dp"
-                    android:text="@string/menu_login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    />
+                    android:text="@string/already_have_an_account"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/menu_login"
+                    android:textColor="@color/blue_button"
+                    android:textSize="22sp" />
             </LinearLayout>
 
             <ImageView
-                android:layout_marginTop="40dp"
-                android:src="@mipmap/cute_bird"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:contentDescription="@string/app_name"/>
+                android:layout_marginTop="40dp"
+                android:contentDescription="@string/app_name"
+                android:src="@mipmap/cute_bird" />
         </LinearLayout>
 
         <ImageView
