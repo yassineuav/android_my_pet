@@ -119,6 +119,7 @@ class LoginRegisterViewModel : ViewModel() {
                     _loginToken.value = result
                     SessionManager().saveAuthToken(result.access)
                     _loginDetails.value = "user login successfully"
+                    // go to main activity
                 }
                 Log.i("fetch data:  success: ", result.toString())
 

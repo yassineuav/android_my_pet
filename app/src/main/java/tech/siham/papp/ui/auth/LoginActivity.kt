@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import tech.siham.papp.MainActivity
 import tech.siham.papp.R
 import tech.siham.papp.data.requests.LoginRequest
 import tech.siham.papp.data.requests.RegisterRequest
@@ -44,6 +45,10 @@ class LoginActivity : AppCompatActivity() {
 
         loginViewModel.loginDetails.observe(this, Observer {
             messageView.text = it.toString()
+            if(it.toString() == "user login successfully"){
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+            }
         })
 
         binding.buttonLogin.setOnClickListener{
