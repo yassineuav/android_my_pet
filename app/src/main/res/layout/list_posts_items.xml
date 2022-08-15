@@ -144,22 +144,19 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
+                            app:likedPost="@{post.liked}"
+                            android:id="@+id/like_button"
                             android:contentDescription="@string/app_name"
                             android:layout_marginStart="5dp"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:src="@drawable/ic_baseline_favorite_border_24"/>
-                        <ImageView
-                            android:contentDescription="@string/app_name"
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:src="@drawable/ic_baseline_favorite_24"/>
+
                         <TextView
+                            android:text="@{post.likesCount.toString()}"
                             android:layout_marginStart="5dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="2k"
-                            tools:text="200K"
                             />
                     </LinearLayout>
 

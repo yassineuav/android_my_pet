@@ -22,6 +22,8 @@ class PostListAdapter(private val onClickListener: OnClickListener) :
     }
 
     class PostViewHolder(private var binding: ListPostsItemsBinding): RecyclerView.ViewHolder(binding.root){
+        val likeButton = binding.likeButton
+
         fun bind(post: Post){
             binding.post = post
             binding.executePendingBindings()
@@ -35,7 +37,8 @@ class PostListAdapter(private val onClickListener: OnClickListener) :
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
         val post = getItem(position)
-        holder.itemView.setOnClickListener{
+
+        holder.likeButton.setOnClickListener{
             onClickListener.onClick(post)
         }
         holder.bind(post)

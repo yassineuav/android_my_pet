@@ -17,4 +17,7 @@ object Constants {
     const val DELETE_POST_URL = "mypost/{id}/"
 
     const val INTERESTED_IN_URL = "interested-in/"
+
+    const val SET_Like_URL = "likes/check/"
+
 }

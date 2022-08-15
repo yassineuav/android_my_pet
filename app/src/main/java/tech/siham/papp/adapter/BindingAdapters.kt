@@ -50,6 +50,7 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
     }
 }
 
+
 @BindingAdapter("interestedApiStatus")
 fun bindStatus(statusImageView: ImageView, status: interestedApiStatus?){
     when(status){
@@ -88,6 +89,16 @@ fun bindStatus(statusImageView: ImageView, status: LoadingMyPostStatus?){
         }
         else -> {}
     }
+}
+
+@BindingAdapter("likedPost")
+fun bindImage(statusImageView: ImageView, liked: Boolean?){
+    if(liked == true){
+        statusImageView.setImageResource(R.drawable.ic_baseline_favorite_24)
+    }else{
+        statusImageView.setImageResource(R.drawable.ic_baseline_favorite_border_24)
+    }
+
 }
 
 

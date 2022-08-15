@@ -24,6 +24,7 @@ import tech.siham.papp.utils.Constants.MY_POST_URL
 import tech.siham.papp.utils.Constants.POST_URL
 import tech.siham.papp.utils.Constants.PROFILE_URL
 import tech.siham.papp.utils.Constants.REGISTER_URL
+import tech.siham.papp.utils.Constants.SET_Like_URL
 
 
 private val moshi = Moshi.Builder()
@@ -93,6 +94,18 @@ interface ApiService {
 
     @POST(INTERESTED_IN_URL)
     fun setInterestedIn(@Body params: InterestedIn): Deferred<InterestedIn>
+
+
+    // create | delete a post
+    // post > liked bool
+    // http://127.0.0.1:8000/likes/check/?post_id=2
+    // http://127.0.0.1:8000/likes/check/?post_id=<post_id>
+    // update post
+
+
+    @GET(SET_Like_URL)
+    fun setLikeAsync(@Query("post_id") postId: Int?): Deferred<Like>
+
 
 }
 
