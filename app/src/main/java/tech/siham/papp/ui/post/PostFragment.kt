@@ -38,12 +38,6 @@ class PostFragment : Fragment() {
 
         binding.data = postViewModel
 
-        //binding.post.adapter?.notifyDataSetChanged()
-
-        postViewModel.details.observe(viewLifecycleOwner, Observer {
-            Toast.makeText(requireContext(), "details like: $it." , Toast.LENGTH_LONG).show()
-            Log.i("From post Fragment: ", "details : $it")
-        })
 
         binding.post.adapter = PostListAdapter(
             PostListAdapter.OnClickListener{
@@ -52,6 +46,13 @@ class PostFragment : Fragment() {
             }
         )
 
+        postViewModel.details.observe(viewLifecycleOwner, Observer {
+            Toast.makeText(requireContext(), "details like: $it." , Toast.LENGTH_LONG).show()
+            Log.i("From post Fragment: ", "details : $it")
+
+        })
+
+//        binding.post.adapter?.notifyDataSetChanged()
 
         return binding.root
     }

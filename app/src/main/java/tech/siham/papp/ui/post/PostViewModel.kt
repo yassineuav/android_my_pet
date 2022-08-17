@@ -29,9 +29,9 @@ class PostViewModel : ViewModel() {
         getPost()
     }
 
-    private val _post = MutableLiveData<List<Post>>()
-    val post : LiveData<List<Post>>
-        get() = _post
+    private val _my_post = MutableLiveData<List<Post>>()
+    val my_post : LiveData<List<Post>>
+        get() = _my_post
 
     private val _details = MutableLiveData<Like>()
     val details : LiveData<Like>
@@ -54,17 +54,17 @@ class PostViewModel : ViewModel() {
                 _status.value = loadingStatus.LOADING
                 val listResult = getPostDeferred.await()
                 if (listResult.isNotEmpty()) {
-                    _post.value = listResult
+                    _my_post.value = listResult
                     _status.value = loadingStatus.DONE
                 } else {
-                    _post.value = ArrayList()
+                    _my_post.value = ArrayList()
                     _status.value = loadingStatus.NO_ITEMS
                 }
 
             } catch (t: Throwable) {
                 Log.i("fetch data:  Fail : ", t.message.toString())
                 _status.value = loadingStatus.ERROR
-                _post.value = ArrayList()
+                _my_post.value = ArrayList()
             } finally {
                 isLoading.set(false)
             }
@@ -86,9 +86,11 @@ class PostViewModel : ViewModel() {
                 }
                 Log.e("like:  Success: ", _details.value.toString() )
 
+
             } catch (t: Throwable) {
                 Log.e("like:  Fail : ", t.message.toString())
                 _status.value = loadingStatus.ERROR
+
 
             } finally {
                 isLoading.set(false)

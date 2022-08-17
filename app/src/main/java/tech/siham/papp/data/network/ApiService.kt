@@ -95,7 +95,6 @@ interface ApiService {
     @POST(INTERESTED_IN_URL)
     fun setInterestedIn(@Body params: InterestedIn): Deferred<InterestedIn>
 
-
     // create | delete a post
     // post > liked bool
     // http://127.0.0.1:8000/likes/check/?post_id=2
@@ -105,7 +104,6 @@ interface ApiService {
 
     @GET(SET_Like_URL)
     fun setLikeAsync(@Query("post_id") postId: Int?): Deferred<Like>
-
 
 }
 

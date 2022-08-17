@@ -40,6 +40,7 @@ class PostListAdapter(private val onClickListener: OnClickListener) :
 
         holder.likeButton.setOnClickListener{
             onClickListener.onClick(post)
+
         }
         holder.bind(post)
     }
